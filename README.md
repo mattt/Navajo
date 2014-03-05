@@ -2,6 +2,8 @@
 
 **Password Validator & Strength Evaluator**
 
+![Navajo](https://raw.github.com/mattt/Navajo/screenshots/example.gif)
+
 > Navajo is named in honor of the famed [code talkers of the Second World War](http://en.wikipedia.org/wiki/Code_talker#Navajo_code_talkers).
 
 ## Usage
