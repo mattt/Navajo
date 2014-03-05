@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8DC5D8618C64DE300D69DD8 /* PasswordEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DC5D8418C64DE300D69DD8 /* PasswordEvaluationViewController.m */; };
+		F8DC5D8718C64DE300D69DD8 /* PasswordEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DC5D8518C64DE300D69DD8 /* PasswordEvaluationViewController.xib */; };
+		F8E7A9BB18C530DC00D35EEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E7A9BA18C530DC00D35EEC /* Foundation.framework */; };
+		F8E7A9BD18C530DC00D35EEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E7A9BC18C530DC00D35EEC /* CoreGraphics.framework */; };
+		F8E7A9BF18C530DC00D35EEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E7A9BE18C530DC00D35EEC /* UIKit.framework */; };
+		F8E7A9C518C530DC00D35EEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8E7A9C318C530DC00D35EEC /* InfoPlist.strings */; };
+		F8E7A9C718C530DC00D35EEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E7A9C618C530DC00D35EEC /* main.m */; };
+		F8E7A9CB18C530DC00D35EEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E7A9CA18C530DC00D35EEC /* AppDelegate.m */; };
+		F8E7A9CD18C530DC00D35EEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E7A9CC18C530DC00D35EEC /* Images.xcassets */; };
+		F8E7A9ED18C531AE00D35EEC /* NJOPasswordStrengthEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E7A9EC18C531AE00D35EEC /* NJOPasswordStrengthEvaluator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F8DC5D8318C64DE300D69DD8 /* PasswordEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEvaluationViewController.h; sourceTree = "<group>"; };
+		F8DC5D8418C64DE300D69DD8 /* PasswordEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEvaluationViewController.m; sourceTree = "<group>"; };
+		F8DC5D8518C64DE300D69DD8 /* PasswordEvaluationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordEvaluationViewController.xib; sourceTree = "<group>"; };
+		F8E7A9B718C530DC00D35EEC /* Navajo Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navajo Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E7A9BA18C530DC00D35EEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8E7A9BC18C530DC00D35EEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F8E7A9BE18C530DC00D35EEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F8E7A9C218C530DC00D35EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E7A9C418C530DC00D35EEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8E7A9C618C530DC00D35EEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8E7A9C818C530DC00D35EEC /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		F8E7A9C918C530DC00D35EEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F8E7A9CA18C530DC00D35EEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F8E7A9CC18C530DC00D35EEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F8E7A9D318C530DC00D35EEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F8E7A9EB18C531AE00D35EEC /* NJOPasswordStrengthEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NJOPasswordStrengthEvaluator.h; path = ../Navajo/NJOPasswordStrengthEvaluator.h; sourceTree = "<group>"; };
+		F8E7A9EC18C531AE00D35EEC /* NJOPasswordStrengthEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJOPasswordStrengthEvaluator.m; path = ../Navajo/NJOPasswordStrengthEvaluator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8E7A9B418C530DC00D35EEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E7A9BD18C530DC00D35EEC /* CoreGraphics.framework in Frameworks */,
+				F8E7A9BF18C530DC00D35EEC /* UIKit.framework in Frameworks */,
+				F8E7A9BB18C530DC00D35EEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8E7A9AE18C530DC00D35EEC = {
+			isa = PBXGroup;
+			children = (
+				F8E7A9C018C530DC00D35EEC /* Example */,
+				F8E7A9B918C530DC00D35EEC /* Frameworks */,
+				F8E7A9B818C530DC00D35EEC /* Products */,
+				F8E7A9E918C5314100D35EEC /* Vendor */,
+			);
+			sourceTree = "<group>";
+		};
+		F8E7A9B818C530DC00D35EEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7A9B718C530DC00D35EEC /* Navajo Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8E7A9B918C530DC00D35EEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7A9BA18C530DC00D35EEC /* Foundation.framework */,
+				F8E7A9BC18C530DC00D35EEC /* CoreGraphics.framework */,
+				F8E7A9BE18C530DC00D35EEC /* UIKit.framework */,
+				F8E7A9D318C530DC00D35EEC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8E7A9C018C530DC00D35EEC /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7A9C918C530DC00D35EEC /* AppDelegate.h */,
+				F8E7A9CA18C530DC00D35EEC /* AppDelegate.m */,
+				F8DC5D8318C64DE300D69DD8 /* PasswordEvaluationViewController.h */,
+				F8DC5D8418C64DE300D69DD8 /* PasswordEvaluationViewController.m */,
+				F8DC5D8518C64DE300D69DD8 /* PasswordEvaluationViewController.xib */,
+				F8E7A9CC18C530DC00D35EEC /* Images.xcassets */,
+				F8E7A9C118C530DC00D35EEC /* Supporting Files */,
+			);
+			name = Example;
+			path = "Navajo Example";
+			sourceTree = "<group>";
+		};
+		F8E7A9C118C530DC00D35EEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7A9C218C530DC00D35EEC /* Info.plist */,
+				F8E7A9C318C530DC00D35EEC /* InfoPlist.strings */,
+				F8E7A9C618C530DC00D35EEC /* main.m */,
+				F8E7A9C818C530DC00D35EEC /* Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8E7A9E918C5314100D35EEC /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7A9EA18C5314800D35EEC /* Navajo */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		F8E7A9EA18C5314800D35EEC /* Navajo */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7A9EB18C531AE00D35EEC /* NJOPasswordStrengthEvaluator.h */,
+				F8E7A9EC18C531AE00D35EEC /* NJOPasswordStrengthEvaluator.m */,
+			);
+			name = Navajo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8E7A9B618C530DC00D35EEC /* Navajo Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8E7A9E318C530DC00D35EEC /* Build configuration list for PBXNativeTarget "Navajo Example" */;
+			buildPhases = (
+				F8E7A9B318C530DC00D35EEC /* Sources */,
+				F8E7A9B418C530DC00D35EEC /* Frameworks */,
+				F8E7A9B518C530DC00D35EEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Navajo Example";
+			productName = "Navajo Example";
+			productReference = F8E7A9B718C530DC00D35EEC /* Navajo Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8E7A9AF18C530DC00D35EEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Mattt Thompson";
+			};
+			buildConfigurationList = F8E7A9B218C530DC00D35EEC /* Build configuration list for PBXProject "Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F8E7A9AE18C530DC00D35EEC;
+			productRefGroup = F8E7A9B818C530DC00D35EEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8E7A9B618C530DC00D35EEC /* Navajo Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8E7A9B518C530DC00D35EEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8DC5D8718C64DE300D69DD8 /* PasswordEvaluationViewController.xib in Resources */,
+				F8E7A9C518C530DC00D35EEC /* InfoPlist.strings in Resources */,
+				F8E7A9CD18C530DC00D35EEC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8E7A9B318C530DC00D35EEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E7A9CB18C530DC00D35EEC /* AppDelegate.m in Sources */,
+				F8E7A9C718C530DC00D35EEC /* main.m in Sources */,
+				F8E7A9ED18C531AE00D35EEC /* NJOPasswordStrengthEvaluator.m in Sources */,
+				F8DC5D8618C64DE300D69DD8 /* PasswordEvaluationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F8E7A9C318C530DC00D35EEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8E7A9C418C530DC00D35EEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8E7A9E118C530DC00D35EEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F8E7A9E218C530DC00D35EEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8E7A9E418C530DC00D35EEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Navajo Example/Prefix.pch";
+				INFOPLIST_FILE = "Navajo Example/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F8E7A9E518C530DC00D35EEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Navajo Example/Prefix.pch";
+				INFOPLIST_FILE = "Navajo Example/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8E7A9B218C530DC00D35EEC /* Build configuration list for PBXProject "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E7A9E118C530DC00D35EEC /* Debug */,
+				F8E7A9E218C530DC00D35EEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8E7A9E318C530DC00D35EEC /* Build configuration list for PBXNativeTarget "Navajo Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E7A9E418C530DC00D35EEC /* Debug */,
+				F8E7A9E518C530DC00D35EEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8E7A9AF18C530DC00D35EEC /* Project object */;
+}

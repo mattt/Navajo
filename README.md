@@ -1,0 +1,52 @@
+# Navajo
+
+**Password Validator & Strength Evaluator**
+
+> Navajo is named in honor of the famed [code talkers of the Second World War](http://en.wikipedia.org/wiki/Code_talker#Navajo_code_talkers).
+
+## Usage
+
+### Validating Password
+
+```objective-c
+NSString *password = @"abc123"
+NJOPasswordValidator *validator = [NJOPasswordValidator standardValidator];
+
+NSArray *failingRules = nil;
+BOOL isValid = [validator validatePassword:password
+                              failingRules:&failingRules];
+
+if (!isValid) {
+    for (id <NJOPasswordRule> rule in failingRules) {
+        NSLog(@"- %@", [rule localizedErrorDescription]);
+    }
+}
+```
+
+#### Available Validation Rules
+
+- Allowed Characters
+- Required Characters (e.g. lowercase, uppercase, decimal, symbol)
+- Non-Dictionary Word (_iOS only_)
+- Minimum / Maximum Length
+- Predicate Match
+- Regular Expression Match
+- Block Evaluation
+
+### Evaluating Password Strength
+
+> Password strength is evaluated in terms of [information entropy](http://en.wikipedia.org/wiki/Entropy_%28information_theory%29).
+
+```objective-c
+NJOPasswordStrength strength = [NJOPasswordStrengthEvaluator strengthOfPassword:password];
+NSLog(@"%@", [NJOPasswordStrengthEvaluator localizedStringForPasswordStrength:strength]);
+```
+
+### Contact
+
+[Mattt Thompson](http://github.com/mattt)
+[@mattt](https://twitter.com/mattt)
+
+## License
+
+Navajo is available under the MIT license. See the LICENSE file for more info.
