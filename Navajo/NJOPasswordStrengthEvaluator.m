@@ -24,6 +24,8 @@
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 @import UIKit;
+#else
+@import CoreServices;
 #endif
 
 CGFloat NJOEntropyForString(NSString *string) {
@@ -254,7 +256,6 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 #pragma mark -
 
-#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 @implementation NJODictionaryWordRule
 
 + (instancetype)rule {
@@ -269,8 +270,19 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
     dispatch_once(&onceToken, ^{
         _nonLowercaseCharacterSet = [[NSCharacterSet lowercaseLetterCharacterSet] invertedSet];
     });
-
+    
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
+    
     return [UIReferenceLibraryViewController dictionaryHasDefinitionForTerm:[[string lowercaseString] stringByTrimmingCharactersInSet:_nonLowercaseCharacterSet]];
+    
+#else
+    
+    CFRange range = DCSGetTermRangeInString(NULL,(__bridge CFStringRef)[[string lowercaseString] stringByTrimmingCharactersInSet:_nonLowercaseCharacterSet],0);
+    
+    return ((range.location != -1) ? YES : NO);
+    
+#endif
+    
 }
 
 - (NSString *)localizedErrorDescription {
@@ -278,7 +290,6 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 }
 
 @end
-#endif
 
 #pragma mark -
 
