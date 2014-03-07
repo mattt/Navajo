@@ -380,7 +380,7 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 - (BOOL)evaluateWithString:(NSString *)string {
     if (self.evaluation) {
-        self.evaluation(string);
+        return self.evaluation(string);
     }
 
     return NO;
