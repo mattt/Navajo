@@ -29,7 +29,7 @@ if (!isValid) {
 
 - Allowed Characters
 - Required Characters (e.g. lowercase, uppercase, decimal, symbol)
-- Non-Dictionary Word (_iOS only_)
+- Non-Dictionary Word
 - Minimum / Maximum Length
 - Predicate Match
 - Regular Expression Match
