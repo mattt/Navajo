@@ -272,17 +272,12 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
     });
     
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
-    
     return [UIReferenceLibraryViewController dictionaryHasDefinitionForTerm:[[string lowercaseString] stringByTrimmingCharactersInSet:_nonLowercaseCharacterSet]];
-    
 #else
-    
-    CFRange range = DCSGetTermRangeInString(NULL,(__bridge CFStringRef)[[string lowercaseString] stringByTrimmingCharactersInSet:_nonLowercaseCharacterSet],0);
-    
-    return ((range.location != -1) ? YES : NO);
-    
+    CFRange range = DCSGetTermRangeInString(NULL,(__bridge CFStringRef)[[string lowercaseString] stringByTrimmingCharactersInSet:_nonLowercaseCharacterSet], 0);
+
+    return range.location != kCFNotFound;
 #endif
-    
 }
 
 - (NSString *)localizedErrorDescription {
