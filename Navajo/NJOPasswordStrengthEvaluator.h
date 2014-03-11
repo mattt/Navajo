@@ -144,8 +144,6 @@ typedef NS_ENUM(NSUInteger, NJOPasswordStrength) {
 
 #pragma mark -
 
-
-#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 /**
  
  */
@@ -157,7 +155,6 @@ typedef NS_ENUM(NSUInteger, NJOPasswordStrength) {
 + (instancetype)rule;
 
 @end
-#endif
 
 #pragma mark -
 
