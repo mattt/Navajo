@@ -140,7 +140,7 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 @implementation NJOPasswordValidator
 
 + (instancetype)standardValidator {
-    return [self validatorWithRules:@[[NJOLengthRule ruleWithRange:NSMakeRange(6, 64)], [NJODictionaryWordRule rule]]];
+    return [self validatorWithRules:@[[NJOLengthRule ruleWithRange:NSMakeRange(6, 64)]]];
 }
 
 + (instancetype)validatorWithRules:(NSArray *)rules {
