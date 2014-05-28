@@ -100,23 +100,23 @@ typedef NS_ENUM(NSUInteger, PasswordValidatorSegmentIndexes) {
             switch (strength) {
                 case NJOVeryWeakPasswordStrength:
                     self.passwordStrengthMeterView.progress = 0.05f;
-                    self.passwordStrengthMeterView.tintColor = [UIColor redColor];
+                    self.passwordStrengthMeterView.progressTintColor = [UIColor redColor];
                     break;
                 case NJOWeakPasswordStrength:
                     self.passwordStrengthMeterView.progress = 0.25f;
-                    self.passwordStrengthMeterView.tintColor = [UIColor orangeColor];
+                    self.passwordStrengthMeterView.progressTintColor = [UIColor orangeColor];
                     break;
                 case NJOReasonablePasswordStrength:
                     self.passwordStrengthMeterView.progress = 0.5f;
-                    self.passwordStrengthMeterView.tintColor = [UIColor yellowColor];
+                    self.passwordStrengthMeterView.progressTintColor = [UIColor yellowColor];
                     break;
                 case NJOStrongPasswordStrength:
                     self.passwordStrengthMeterView.progress = 0.75f;
-                    self.passwordStrengthMeterView.tintColor = [UIColor greenColor];
+                    self.passwordStrengthMeterView.progressTintColor = [UIColor greenColor];
                     break;
                 case NJOVeryStrongPasswordStrength:
                     self.passwordStrengthMeterView.progress = 1.0f;
-                    self.passwordStrengthMeterView.tintColor = [UIColor cyanColor];
+                    self.passwordStrengthMeterView.progressTintColor = [UIColor cyanColor];
                     break;
             }
             
@@ -124,7 +124,7 @@ typedef NS_ENUM(NSUInteger, PasswordValidatorSegmentIndexes) {
         } else {
             self.passwordStrengthLabel.text = NSLocalizedString(@"Invalid Password", nil);
             self.passwordStrengthMeterView.progress = 0.0f;
-            self.passwordStrengthMeterView.tintColor = [UIColor redColor];
+            self.passwordStrengthMeterView.progressTintColor = [UIColor redColor];
 
             NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] init];
             for (id <NJOPasswordRule> rule in failingRules) {
