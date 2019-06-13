@@ -23,11 +23,13 @@
 @import UIKit;
 
 @interface PasswordEvaluationViewController : UIViewController <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIProgressView *passwordStrengthMeterView;
-@property (weak, nonatomic) IBOutlet UILabel *passwordStrengthLabel;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (weak, nonatomic) IBOutlet UITextView *validationErrorsTextView;
+
+@property (nonatomic) IBOutlet UITextField *passwordTextField;
+@property (nonatomic) IBOutlet UIProgressView *passwordStrengthMeterView;
+@property (nonatomic) IBOutlet UILabel *passwordStrengthLabel;
+@property (nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (nonatomic) IBOutlet UITextView *validationErrorsTextView;
 
 - (IBAction)segmentedControlDidChangeValue:(id)sender;
+
 @end
