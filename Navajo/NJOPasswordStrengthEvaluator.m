@@ -28,9 +28,11 @@
 @import CoreServices;
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
 CGFloat NJOEntropyForString(NSString *string) {
     if (!string || [string length] == 0) {
-        return 0.0f;
+        return 0.0;
     }
 
     __block BOOL includesLowercaseCharacter = NO, includesUppercaseCharacter = NO, includesDecimalDigitCharacter = NO, includesPunctuationCharacter = NO, includesSymbolCharacter = NO, includesWhitespaceCharacter = NO, includesNonBaseCharacter = NO;
@@ -87,7 +89,7 @@ CGFloat NJOEntropyForString(NSString *string) {
         }
     }];
 
-    CGFloat entropyPerCharacter = log2f(sizeOfCharacterSet);
+    CGFloat entropyPerCharacter = log2(sizeOfCharacterSet);
     
     return entropyPerCharacter * [string length];
 }
@@ -114,8 +116,8 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
     return NJOPasswordStrengthForEntropy(NJOEntropyForString(password));
 }
 
-+ (NSString *)localizedStringForPasswordStrength:(NJOPasswordStrength)strength {
-    switch (strength) {
++ (NSString *)localizedStringForPasswordStrength:(NJOPasswordStrength)level {
+    switch (level) {
         case NJOVeryWeakPasswordStrength:
             return NSLocalizedStringFromTable(@"Very Weak Password", @"Navajo", nil);
         case NJOWeakPasswordStrength:
@@ -139,19 +141,19 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJOPasswordValidator
 
-+ (instancetype)standardValidator {
++ (NJOPasswordValidator *)standardValidator {
     return [self validatorWithRules:@[[NJOLengthRule ruleWithRange:NSMakeRange(6, 64)]]];
 }
 
-+ (instancetype)validatorWithRules:(NSArray *)rules {
-    NJOPasswordValidator *validator = [[self alloc] init];
++ (NJOPasswordValidator *)validatorWithRules:(NSArray *)rules {
+    NJOPasswordValidator *validator = [[NJOPasswordValidator alloc] init];
     validator.rules = rules;
 
     return validator;
 }
 
 - (BOOL)validatePassword:(NSString *)password
-            failingRules:(out NSArray *__autoreleasing *)rules
+            failingRules:(out NSArray<id<NJOPasswordRule>> * _Nonnull __autoreleasing *_Nullable)rules;
 {
     NSArray *failingRules = [self.rules filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id <NJOPasswordRule> rule, NSDictionary *bindings) {
         return [rule evaluateWithString:password];
@@ -174,8 +176,8 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJOAllowedCharacterRule
 
-+ (instancetype)ruleWithAllowedCharacters:(NSCharacterSet *)characterSet {
-    NJOAllowedCharacterRule *rule = [[self alloc] init];
++ (NJOAllowedCharacterRule *)ruleWithAllowedCharacters:(NSCharacterSet *)characterSet {
+    NJOAllowedCharacterRule *rule = [[NJOAllowedCharacterRule alloc] init];
     rule.disallowedCharacters = [characterSet invertedSet];
 
     return rule;
@@ -202,40 +204,40 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJORequiredCharacterRule
 
-+ (instancetype)ruleWithRequiredCharacters:(NSCharacterSet *)characterSet {
-    NJORequiredCharacterRule *rule = [[self alloc] init];
++ (NJORequiredCharacterRule *)ruleWithRequiredCharacters:(NSCharacterSet *)characterSet {
+    NJORequiredCharacterRule *rule = [[NJORequiredCharacterRule alloc] init];
     rule.requiredCharacters = characterSet;
     rule.localizedErrorDescription = NSLocalizedStringFromTable(@"Must include required characters", @"Navajo", nil);
 
     return rule;
 }
 
-+ (instancetype)lowercaseCharacterRequiredRule {
-    NJORequiredCharacterRule *rule = [[self alloc] init];
++ (NJORequiredCharacterRule *)lowercaseCharacterRequiredRule {
+    NJORequiredCharacterRule *rule = [[NJORequiredCharacterRule alloc] init];
     rule.requiredCharacters = [NSCharacterSet lowercaseLetterCharacterSet];
     rule.localizedErrorDescription = NSLocalizedStringFromTable(@"Must include lowercase character", @"Navajo", nil);
 
     return rule;
 }
 
-+ (instancetype)uppercaseCharacterRequiredRule {
-    NJORequiredCharacterRule *rule = [[self alloc] init];
++ (NJORequiredCharacterRule *)uppercaseCharacterRequiredRule {
+    NJORequiredCharacterRule *rule = [[NJORequiredCharacterRule alloc] init];
     rule.requiredCharacters = [NSCharacterSet uppercaseLetterCharacterSet];
     rule.localizedErrorDescription = NSLocalizedStringFromTable(@"Must include uppercase character", @"Navajo", nil);
 
     return rule;
 }
 
-+ (instancetype)decimalDigitCharacterRequiredRule {
-    NJORequiredCharacterRule *rule = [[self alloc] init];
++ (NJORequiredCharacterRule *)decimalDigitCharacterRequiredRule {
+    NJORequiredCharacterRule *rule = [[NJORequiredCharacterRule alloc] init];
     rule.requiredCharacters = [NSCharacterSet decimalDigitCharacterSet];
     rule.localizedErrorDescription = NSLocalizedStringFromTable(@"Must include decimal digit character", @"Navajo", nil);
 
     return rule;
 }
 
-+ (instancetype)symbolCharacterRequiredRule {
-    NJORequiredCharacterRule *rule = [[self alloc] init];
++ (NJORequiredCharacterRule *)symbolCharacterRequiredRule {
+    NJORequiredCharacterRule *rule = [[NJORequiredCharacterRule alloc] init];
 
     NSMutableCharacterSet *mutableCharacterSet = [[NSMutableCharacterSet alloc] init];
     [mutableCharacterSet formUnionWithCharacterSet:[NSCharacterSet symbolCharacterSet]];
@@ -258,8 +260,8 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJODictionaryWordRule
 
-+ (instancetype)rule {
-    return [[self alloc] init];
++ (NJODictionaryWordRule *)rule {
+    return [[NJODictionaryWordRule alloc] init];
 }
 
 #pragma mark - NJOPasswordRule
@@ -294,8 +296,8 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJOLengthRule
 
-+ (instancetype)ruleWithRange:(NSRange)range {
-    NJOLengthRule *rule = [[self alloc] init];
++ (NJOLengthRule *)ruleWithRange:(NSRange)range {
+    NJOLengthRule *rule = [[NJOLengthRule alloc] init];
     rule.range = range;
 
     return rule;
@@ -321,8 +323,8 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJOPredicateRule
 
-+ (instancetype)ruleWithPredicate:(NSPredicate *)predicate {
-    NJOPredicateRule *rule = [[self alloc] init];
++ (NJOPredicateRule *)ruleWithPredicate:(NSPredicate *)predicate {
+    NJOPredicateRule *rule = [[NJOPredicateRule alloc] init];
     rule.predicate = predicate;
 
     return rule;
@@ -348,8 +350,8 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJORegularExpressionRule
 
-+ (instancetype)ruleWithRegularExpression:(NSRegularExpression *)regularExpression {
-    NJORegularExpressionRule *rule = [[self alloc] init];
++ (NJORegularExpressionRule *)ruleWithRegularExpression:(NSRegularExpression *)regularExpression {
+    NJORegularExpressionRule *rule = [[NJORegularExpressionRule alloc] init];
     rule.regularExpression = regularExpression;
 
     return rule;
@@ -375,7 +377,7 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 
 @implementation NJOBlockRule
 
-+ (instancetype)ruleWithBlock:(BOOL (^)(NSString *password))block {
++ (NJOBlockRule *)ruleWithBlock:(BOOL (^)(NSString *password))block {
     NJOBlockRule *rule = [[NJOBlockRule alloc] init];
     rule.evaluation = block;
 
@@ -397,3 +399,5 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 }
 
 @end
+
+NS_ASSUME_NONNULL_END
