@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 @import Foundation;
+@import CoreGraphics;
 @import Darwin.Availability;
 
 /**

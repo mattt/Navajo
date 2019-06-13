@@ -184,7 +184,7 @@ static inline __attribute__((const)) NJOPasswordStrength NJOPasswordStrengthForE
 #pragma mark - NJOPasswordRule
 
 - (BOOL)evaluateWithString:(NSString *)string {
-    return [string rangeOfCharacterFromSet:self.disallowedCharacters].location == NSNotFound;
+    return [string rangeOfCharacterFromSet:self.disallowedCharacters].location != NSNotFound;
 }
 
 - (NSString *)localizedErrorDescription {
