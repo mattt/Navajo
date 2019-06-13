@@ -2,6 +2,12 @@
 
 **Password Validator & Strength Evaluator**
 
+> This library is no longer maintained.
+> Use [Password Autofill Rules](https://developer.apple.com/documentation/security/password_autofill/customizing_password_autofill_rules)
+> in iOS 12, macOS Mojave, and Safari
+> to generate strong random passwords
+> according to your own validation criteria.
+
 ![Navajo](https://raw.github.com/mattt/Navajo/screenshots/example.gif)
 
 > Navajo is named in honor of the famed [code talkers of the Second World War](http://en.wikipedia.org/wiki/Code_talker#Navajo_code_talkers).
